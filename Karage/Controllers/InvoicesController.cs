@@ -1,10 +1,8 @@
-﻿using Karage.Application.Interfaces;
-using Karage.Domain.Common;
+﻿using Karage.Domain.Common;
 using Karage.Domain.Common.DTOs;
 using Karage.Domain.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization; 
 using Microsoft.AspNetCore.Mvc;
 
 namespace Karage.APIs.Controllers

@@ -4,12 +4,7 @@ using Intuit.Ipp.QueryFilter;
 using Karage.Application.Interfaces;
 using Karage.Domain.Common.DTOs;
 using Karage.Domain.Common;
-using Karage.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Karage.Domain.Interfaces; 
 
 namespace Karage.Infrastructure.Services
 {

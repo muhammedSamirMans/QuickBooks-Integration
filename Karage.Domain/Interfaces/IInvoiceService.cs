@@ -1,6 +1,5 @@
 ﻿using Karage.Domain.Common.DTOs;
 using Karage.Domain.Common;
-using Intuit.Ipp.Data;
 
 namespace Karage.Domain.Interfaces
 {

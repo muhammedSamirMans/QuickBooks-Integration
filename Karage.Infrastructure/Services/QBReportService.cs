@@ -1,6 +1,5 @@
 ﻿using Intuit.Ipp.Data;
-using Intuit.Ipp.ReportService;
-using Intuit.Ipp.Core;
+using Intuit.Ipp.ReportService; 
 using Karage.Application.Interfaces;
 using Karage.Domain.Common;
 using Karage.Domain.Common.DTOs;
@@ -35,10 +34,10 @@ namespace Karage.Infrastructure.Services
             }
             catch (SerializationException serEx)
             {
-                Console.WriteLine($"❌ Serialization Error: {serEx.Message}");
+                Console.WriteLine($"Serialization Error: {serEx.Message}");
                 if (serEx.InnerException != null)
                 {
-                    Console.WriteLine($"🔍 Inner Exception: {serEx.InnerException.Message}");
+                    Console.WriteLine($"Inner Exception: {serEx.InnerException.Message}");
                 }
                 throw;
             }

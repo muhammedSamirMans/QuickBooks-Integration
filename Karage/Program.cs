@@ -1,4 +1,4 @@
-#region Using Labs
+#region Using 
 using Karage.APIs.Extensions;
 using Karage.APIs.Middlewares; 
 #endregion
@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -20,32 +20,55 @@ namespace Karage.APIs.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> Connect()
         {
-            string url = await quickBooksService.getAuthorizeUrl();
+            string url = await quickBooksService.GetAuthorizeUrl();
             return Ok(new {Status = 200, URL = url});
         }
 
         [HttpGet("callback")]
         public async Task<IActionResult> Callback()
         {
+            ResponseVM response = new ResponseVM { Status = 200, Message = "Success" };
             var state = Request.Query["state"];
             var code = Request.Query["code"].ToString();
             var realmId = Request.Query["realmId"].ToString();
             QBAuth token = new QBAuth();
             if (state.Count > 0 && !string.IsNullOrEmpty(code))
             {
-               token =  await quickBooksService.GetAuthTokensAsync(code, realmId);
+                try
+                {
+                    token = await quickBooksService.GetAuthTokensAsync(code, realmId);
+                }
+                catch (Exception ex) 
+                {
+                    response.Message = ex.Message;
+                    response.Status = 500;
+                }
             }
-             
-
-            return Ok(new { AccessToken = token.AccessToken, RefreshToken = token.RefreshToken });
+            else
+            {
+                response.Message = "Sorry, code is empty";
+                response.Status = 403;
+            }
+            return Ok(response);
         }
          
         [HttpGet("GetCompanyInfo-quickbooks")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> GetCompanyInfo()
         {
-            ApiResponse response = await quickBooksService.GetCompanyInfoAsync();
-            return Ok(new { Status = 200, Result = response });
+            ResponseVM response = new ResponseVM { Status = 200, Message = "Success" };
+
+            try
+            {
+                ApiResponse apiResponse = await quickBooksService.GetCompanyInfoAsync();
+            }
+            catch (Exception ex)
+            { 
+                response.Message = ex.Message;
+                response.Status = 500;
+            } 
+
+            return Ok(response);
         }
     }
 }

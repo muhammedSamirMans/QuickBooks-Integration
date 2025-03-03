@@ -1,10 +1,6 @@
-﻿using Intuit.Ipp.Core.Configuration;
-using Karage.Application.Interfaces;
-using Karage.Application.Services;
+﻿using Karage.Application.Interfaces; 
 using Karage.Domain.Common;
-using Karage.Domain.Entities;
-using Karage.Infrastructure.Services;
-using Microsoft.AspNetCore.Http;
+using Karage.Domain.Entities; 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 

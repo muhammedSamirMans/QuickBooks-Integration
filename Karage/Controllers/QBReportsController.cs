@@ -1,6 +1,5 @@
 ﻿using Karage.Domain.Common.DTOs;
-using Karage.Domain.Interfaces;
-using Karage.Infrastructure.Services;
+using Karage.Domain.Interfaces; 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization; 
 using Microsoft.AspNetCore.Mvc;

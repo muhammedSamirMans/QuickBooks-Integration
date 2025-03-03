@@ -1,13 +1,8 @@
 ﻿using Karage.Domain.Entities;
 using Karage.Domain.Interfaces;
 using Karage.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore; 
+using System.Linq.Expressions; 
 
 namespace Karage.Infrastructure.Repositories
 {
@@ -29,10 +24,12 @@ namespace Karage.Infrastructure.Repositories
         {
             return await context.Set<T>().FirstOrDefaultAsync(e => e.Id == id && !e.IsDeleted);
         }
+
         public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
         {
             return await context.Set<T>().FirstOrDefaultAsync(predicate);
         }
+
         public async Task AddAsync(T entity)
         {
             entity.CreatedDate = DateTime.UtcNow;

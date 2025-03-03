@@ -2,8 +2,7 @@
 using Karage.Domain.Common.DTOs;
 using Karage.Domain.Interfaces;
 using Intuit.Ipp.Data;
-using Intuit.Ipp.QueryFilter;
-using Karage.Domain.Entities;
+using Intuit.Ipp.QueryFilter; 
 using Karage.Application.Interfaces;
 using Intuit.Ipp.DataService;
 
@@ -26,7 +25,7 @@ namespace Karage.Infrastructure.Services
                 var dataService = new DataService(serviceContext);
                  
                 #region Create Inovice
-                // 🔥 Create a new Invoice object
+                //Create a new Invoice object
                 var line = new Line
                 {
                     DetailType = LineDetailTypeEnum.SalesItemLineDetail,
@@ -51,13 +50,13 @@ namespace Karage.Infrastructure.Services
                 };
                 #endregion
 
-                // 🔥 Send the invoice to QuickBooks
+                //Send the invoice to QuickBooks
                 Invoice createdInvoice = dataService.Add(newInvoice);
 
                 var result = new InvoiceVM
                 {
                     Id = createdInvoice.Id,
-                    CustomerRef = createdInvoice.CustomerRef?.Value,
+                    CustomerName = createdInvoice.CustomerRef.name,
                     TotalAmount = createdInvoice.TotalAmt,
                     BalanceDue = createdInvoice.Balance,
                     InvoiceDate = createdInvoice.TxnDate
@@ -88,7 +87,7 @@ namespace Karage.Infrastructure.Services
                 return invoices.Select(invoice => new InvoiceVM
                 {
                     Id = invoice.Id,
-                    CustomerRef = invoice.CustomerRef?.Value,
+                    CustomerName = invoice.CustomerRef?.name,
                     TotalAmount = invoice.TotalAmt,
                     BalanceDue = invoice.Balance,
                     InvoiceDate = invoice.TxnDate
