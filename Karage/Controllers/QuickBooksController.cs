@@ -61,6 +61,7 @@ namespace Karage.APIs.Controllers
             try
             {
                 ApiResponse apiResponse = await quickBooksService.GetCompanyInfoAsync();
+                response.Data = apiResponse;
             }
             catch (Exception ex)
             { 
