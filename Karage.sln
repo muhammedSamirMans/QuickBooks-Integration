@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karage.APIs", "Karage\Karage.APIs.csproj", "{89D9E89F-F240-477C-9FCB-84B30BCC11B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F8B7FD0E-4007-441A-813F-2FE83F27D1E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5BC9F157-AA23-4D15-8837-76EA56B8146E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{763CE176-7618-4332-A44B-8FE9C8F25923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karage.Infrastructure", "Karage.Infrastructure\Karage.Infrastructure.csproj", "{2D07524D-2F91-4C04-853C-84DAD67A3296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karage.Domain", "Karage.Domain\Karage.Domain.csproj", "{718BB6E9-A7E7-41A0-98B1-E257879A7458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karage.Application", "Karage.Application\Karage.Application.csproj", "{48635D03-A003-4D47-954A-48E659ED96ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89D9E89F-F240-477C-9FCB-84B30BCC11B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D9E89F-F240-477C-9FCB-84B30BCC11B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D9E89F-F240-477C-9FCB-84B30BCC11B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D9E89F-F240-477C-9FCB-84B30BCC11B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D07524D-2F91-4C04-853C-84DAD67A3296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D07524D-2F91-4C04-853C-84DAD67A3296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D07524D-2F91-4C04-853C-84DAD67A3296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D07524D-2F91-4C04-853C-84DAD67A3296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718BB6E9-A7E7-41A0-98B1-E257879A7458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718BB6E9-A7E7-41A0-98B1-E257879A7458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718BB6E9-A7E7-41A0-98B1-E257879A7458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718BB6E9-A7E7-41A0-98B1-E257879A7458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48635D03-A003-4D47-954A-48E659ED96ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48635D03-A003-4D47-954A-48E659ED96ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48635D03-A003-4D47-954A-48E659ED96ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48635D03-A003-4D47-954A-48E659ED96ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89D9E89F-F240-477C-9FCB-84B30BCC11B8} = {763CE176-7618-4332-A44B-8FE9C8F25923}
+		{2D07524D-2F91-4C04-853C-84DAD67A3296} = {5BC9F157-AA23-4D15-8837-76EA56B8146E}
+		{718BB6E9-A7E7-41A0-98B1-E257879A7458} = {F8B7FD0E-4007-441A-813F-2FE83F27D1E0}
+		{48635D03-A003-4D47-954A-48E659ED96ED} = {F8B7FD0E-4007-441A-813F-2FE83F27D1E0}
+	EndGlobalSection
+EndGlobal
