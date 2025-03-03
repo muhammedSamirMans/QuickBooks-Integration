@@ -29,10 +29,16 @@ namespace Karage.APIs.Controllers
             {
                 var user = await userManager.FindByEmailAsync(loginDTO.Email);
                 if (user == null || !await userManager.CheckPasswordAsync(user, loginDTO.Password))
-                    return Ok("Invalid email or password");
-                var token = jwtService.GenerateToken(user);
-                bool IsQBConnected = await quickBooksService.IsRefreshTokenActive();
-                response.Data  = new { token, IsQBConnected };
+                {
+                    response.Status = 401;
+                    response.Message = "Invalid email or password";
+                }
+                else
+                { 
+                    var token = jwtService.GenerateToken(user);
+                    bool IsQBConnected = await quickBooksService.IsRefreshTokenActive();
+                    response.Data = new { token, IsQBConnected };
+                }
             }
             catch (Exception ex) 
             { 
